@@ -12,15 +12,17 @@ import RxSwift
 class GithubModel {
 
   static func bind(
-    _ lifecycle: Observable<MviLifecycle>
+    _ lifecycle: Observable<MviLifecycle>, _ intentions: Intentions
   ) -> Observable<GithubState> {
+    
+    let lifecycleCreatedState = lifecycleCreatedUseCase(lifecycle)
 
-    let lifecycleCreatedState = lifecycleCreateduseCase(lifecycle)
+    let userInputStates = userInputUseCase(intentions)
 
-    return lifecycleCreatedState
+    return Observable.merge(lifecycleCreatedState, userInputStates)
   }
 
-  static func lifecycleCreateduseCase(
+  static func lifecycleCreatedUseCase(
     _ lifecycle: Observable<MviLifecycle>
   ) -> Observable<GithubState> {
     return lifecycle
@@ -28,5 +30,13 @@ class GithubModel {
       .map { (lifecycle) -> GithubState in
         return GithubState.initialState()
       }
+  }
+
+  static func userInputUseCase(_ intentions: Intentions) -> Observable<GithubState> {
+    return Observable.deferred({ () -> Observable<GithubState> in
+      Observable.just(GithubState(userInput: "A", repos: [], summary: .inProgress))
+    })
+
+    // return Observable.just(GithubState(userInput: "A", repos: [], summary: .inProgress))
   }
 }

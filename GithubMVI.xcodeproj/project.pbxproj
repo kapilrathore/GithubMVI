@@ -13,7 +13,11 @@
 		8F04050A218080780005860B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F040508218080780005860B /* Main.storyboard */; };
 		8F04050C2180807A0005860B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F04050B2180807A0005860B /* Assets.xcassets */; };
 		8F04050F2180807A0005860B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F04050D2180807A0005860B /* LaunchScreen.storyboard */; };
-		8F04051A2180807A0005860B /* GithubMVITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0405192180807A0005860B /* GithubMVITests.swift */; };
+		8FA86CF3218088E6001D7D4B /* GithubModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA86CF2218088E6001D7D4B /* GithubModelTests.swift */; };
+		8FA86CF5218089D0001D7D4B /* GithubState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA86CF4218089D0001D7D4B /* GithubState.swift */; };
+		8FA86CF721808DC6001D7D4B /* GithubModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA86CF621808DC6001D7D4B /* GithubModel.swift */; };
+		8FA86CF921808E1E001D7D4B /* MviLifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA86CF821808E1E001D7D4B /* MviLifecycle.swift */; };
+		8FA86CFB2180952B001D7D4B /* Intentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA86CFA2180952B001D7D4B /* Intentions.swift */; };
 		AFAECC3A9468203B1BE0B7BC /* Pods_GithubMVI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFA69D861662356B2A35B91A /* Pods_GithubMVI.framework */; };
 		DA421827CDC3446139E3ECB6 /* Pods_GithubMVITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDAE9A1524640A69462FB218 /* Pods_GithubMVITests.framework */; };
 /* End PBXBuildFile section */
@@ -40,8 +44,12 @@
 		8F04050E2180807A0005860B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F0405102180807A0005860B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F0405152180807A0005860B /* GithubMVITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GithubMVITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		8F0405192180807A0005860B /* GithubMVITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubMVITests.swift; sourceTree = "<group>"; };
 		8F04051B2180807A0005860B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FA86CF2218088E6001D7D4B /* GithubModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModelTests.swift; sourceTree = "<group>"; };
+		8FA86CF4218089D0001D7D4B /* GithubState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubState.swift; sourceTree = "<group>"; };
+		8FA86CF621808DC6001D7D4B /* GithubModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubModel.swift; sourceTree = "<group>"; };
+		8FA86CF821808E1E001D7D4B /* MviLifecycle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MviLifecycle.swift; sourceTree = "<group>"; };
+		8FA86CFA2180952B001D7D4B /* Intentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Intentions.swift; sourceTree = "<group>"; };
 		99479A9D3B2099F12D96486B /* Pods-GithubMVITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GithubMVITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GithubMVITests/Pods-GithubMVITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFA69D861662356B2A35B91A /* Pods_GithubMVI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubMVI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDAE9A1524640A69462FB218 /* Pods_GithubMVITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GithubMVITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,6 +114,10 @@
 				8F04050B2180807A0005860B /* Assets.xcassets */,
 				8F04050D2180807A0005860B /* LaunchScreen.storyboard */,
 				8F0405102180807A0005860B /* Info.plist */,
+				8FA86CF4218089D0001D7D4B /* GithubState.swift */,
+				8FA86CFA2180952B001D7D4B /* Intentions.swift */,
+				8FA86CF621808DC6001D7D4B /* GithubModel.swift */,
+				8FA86CF821808E1E001D7D4B /* MviLifecycle.swift */,
 			);
 			path = GithubMVI;
 			sourceTree = "<group>";
@@ -113,9 +125,9 @@
 		8F0405182180807A0005860B /* GithubMVITests */ = {
 			isa = PBXGroup;
 			children = (
-				8F0405192180807A0005860B /* GithubMVITests.swift */,
 				8F04051B2180807A0005860B /* Info.plist */,
 				5F8F6C9650CBBDCEF97F6218 /* CanaryTest.swift */,
+				8FA86CF2218088E6001D7D4B /* GithubModelTests.swift */,
 			);
 			path = GithubMVITests;
 			sourceTree = "<group>";
@@ -317,7 +329,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FA86CFB2180952B001D7D4B /* Intentions.swift in Sources */,
+				8FA86CF721808DC6001D7D4B /* GithubModel.swift in Sources */,
 				8F040507218080780005860B /* ViewController.swift in Sources */,
+				8FA86CF5218089D0001D7D4B /* GithubState.swift in Sources */,
+				8FA86CF921808E1E001D7D4B /* MviLifecycle.swift in Sources */,
 				8F040505218080780005860B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -326,7 +342,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F04051A2180807A0005860B /* GithubMVITests.swift in Sources */,
+				8FA86CF3218088E6001D7D4B /* GithubModelTests.swift in Sources */,
 				5F8F66C9E1E6B88EA2F608DB /* CanaryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
